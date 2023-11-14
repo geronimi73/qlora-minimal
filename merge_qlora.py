@@ -15,7 +15,7 @@ base_model = AutoModelForCausalLM.from_pretrained(
 
 tokenizer = AutoTokenizer.from_pretrained(base_path)
 
-# Add/set tokens same tokens to base model before merging, like we did before starting training https://github.com/geronimi73/qlora-minimal/blob/49590ee9d350e4a01f6ab6b1147e084cc99bef4d/qlora.py#L27  
+# Add/set tokens same tokens to base model before merging, like we did before starting training https://github.com/geronimi73/qlora-minimal/blob/main/qlora.py#L27  
 tokenizer.pad_token = "</s>"
 tokenizer.add_tokens(["<|im_start|>"])
 tokenizer.add_special_tokens(dict(eos_token="<|im_end|>"))
